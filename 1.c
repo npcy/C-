@@ -7,12 +7,12 @@ typedef struct Node
 	int coef;//系数 
 	int expn;//指数 
 	struct Node *next;
-}LNode;                       //LNode为创建的多项式链表类型       
+}LNode;                              
 struct elem
 {
 	int coef;
 	int expn;
-}List[100],change;            //List[]构建链表,change用来交换List[]中的某两项。
+}List[100],change;            
 LNode* create(int n)           
 {
 	LNode *head;                                    
@@ -51,7 +51,7 @@ LNode* add(LNode *p1,LNode *p2)   //将多项式p1与p2相加，结果存在第�
 	L=head;
 	while(p1&&p2)            //遍历两表，根据情况判断表的长短是否相同，是否缺项多项，建立一个新的链表来存取内容 
 	{
-		if(p1->expn > p2->expn)//比较指数大小，将指数和系数较小的存入新表 
+		if(p1->expn > p2->expn)
 		{
 			s=(LNode *)malloc(sizeof(LNode));
 			L->next=s;
@@ -60,7 +60,7 @@ LNode* add(LNode *p1,LNode *p2)   //将多项式p1与p2相加，结果存在第�
 			L=s;
 			p2=p2->next;
 		}
-		if(p1->expn < p2->expn)//比较指数大小，将指数和系数较小的存入新表 
+		if(p1->expn < p2->expn)
 		{
 			s=(LNode *)malloc(sizeof(LNode));
 			L->next=s;
@@ -69,7 +69,7 @@ LNode* add(LNode *p1,LNode *p2)   //将多项式p1与p2相加，结果存在第�
 			L=s;
 			p1=p1->next;
 		}
-		if(p1->expn == p2->expn)//相等可以直接相加 
+		if(p1->expn == p2->expn)
 		{
 			s=(LNode *)malloc(sizeof(LNode));
 			L->next=s;
@@ -80,7 +80,7 @@ LNode* add(LNode *p1,LNode *p2)   //将多项式p1与p2相加，结果存在第�
 			p2=p2->next;
 		}
 	}
-	while(p1)//p1有剩余 
+	while(p1)
 	{
 		    s=(LNode *)malloc(sizeof(LNode));
 			L->next=s;
@@ -89,7 +89,7 @@ LNode* add(LNode *p1,LNode *p2)   //将多项式p1与p2相加，结果存在第�
 			L=s;
 			p1=p1->next;
 	}
-	while(p2)//p2有剩余 
+	while(p2)
 	{
 		    s=(LNode *)malloc(sizeof(LNode));
 			L->next=s;
@@ -101,7 +101,7 @@ LNode* add(LNode *p1,LNode *p2)   //将多项式p1与p2相加，结果存在第�
 	L->next=NULL;
 	return head;
 }
-void print(LNode *p1)     //输出表
+void print(LNode *p1)     
 {
 	p1=p1->next;
 	while(p1)
