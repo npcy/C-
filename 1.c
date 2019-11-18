@@ -117,9 +117,9 @@ int main()
 	int n;
 	while(z)                                        
 	{
-	printf("请输入项数\n");
+	printf("Please enter the number of items\n");
 	scanf("%d",&n);
-	printf("请输入各项\n");
+	printf("Please enter ench items\n");
 	int i=1;
 	for(i=1;i<=n;i++)
 	{
@@ -145,7 +145,7 @@ int main()
 	}
 	LNode *pp;
 	pp=add(head2[1],head2[2]);
-	printf("结果为：\n");
+	printf("result is:\n");
 	print(pp);
 	system("pause");
 	return 0;
