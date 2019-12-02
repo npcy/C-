@@ -1,4 +1,4 @@
-//C语言多项式相加
+//C语言多项式相加。。
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -149,4 +149,4 @@ int main()
 	print(pp);
 	system("pause");
 	return 0;
-}
+} 
