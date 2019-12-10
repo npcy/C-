@@ -13,27 +13,27 @@ typedef struct{
 HNodeType HuffNode[8];
 HCodeType HuffCode[8];
 int n;
-void	CreateHuffTree(void);			//æ„é€ å“ˆå¤«æ›¼æ ‘
-void	PrintHuffTree(void);			//è¾“å‡ºå“ˆå¤«æ›¼æ ‘
-void	CreateHuffCode(void);			//æ„é€ å“ˆå¤«æ›¼ç¼–ç 
-void	PrintHuffcode(void);			//è¾“å‡ºæ¯ä¸ªå¶å­ç»“ç‚¹çš„å“ˆå¤«æ›¼ç¼–ç 
-void CreateHuffTree(void){		//æ„é€ å“ˆå¤«æ›¼æ ‘	
-int i,j,a,b,x1,x2;	scanf("%d",&n);        //è¾“å…¥å¶å­èŠ‚ç‚¹ä¸ªæ•°	
-for(i=1;i<2*n;i++) //HuffNode åˆå§‹åŒ– 	
+void	CreateHuffTree(void);			//¹¹Ôì¹ş·òÂüÊ÷
+void	PrintHuffTree(void);			//Êä³ö¹ş·òÂüÊ÷
+void	CreateHuffCode(void);			//¹¹Ôì¹ş·òÂü±àÂë
+void	PrintHuffcode(void);			//Êä³öÃ¿¸öÒ¶×Ó½áµãµÄ¹ş·òÂü±àÂë
+void CreateHuffTree(void){		//¹¹Ôì¹ş·òÂüÊ÷	
+int i,j,a,b,x1,x2;	scanf("%d",&n);        //ÊäÈëÒ¶×Ó½Úµã¸öÊı	
+for(i=1;i<2*n;i++) //HuffNode ³õÊ¼»¯ 	
 {		
 HuffNode[i].weight=0;		
 HuffNode[i].parent=-1;		
 HuffNode[i].lchild=-1;		
 HuffNode[i].rchild=-1;	}	
-printf("è¾“å…¥%dä¸ªèŠ‚ç‚¹çš„æƒå€¼\n",n);	
+printf("ÊäÈë%d¸ö½ÚµãµÄÈ¨Öµ\n",n);	
 for(i=1;i<=n;i++)	
-scanf("%d",& HuffNode[i].weight);//è¾“å…¥Nä¸ªå¶å­èŠ‚ç‚¹çš„æƒå€¼		
-for(i=1;i<n;i++){   //æ„é€ å“ˆå¤«æ›¼æ ‘ 			
+scanf("%d",& HuffNode[i].weight);//ÊäÈëN¸öÒ¶×Ó½ÚµãµÄÈ¨Öµ		
+for(i=1;i<n;i++){   //¹¹Ôì¹ş·òÂüÊ÷ 			
 a=MAXVALUE;			
 b=MAXVALUE;			
 x1=0;			
 x2=0;				
-for(j=1;j<n+i;j++){        //é€‰å–æœ€å°å’Œæ¬¡å°ä¸¤ä¸ªæƒå€¼					
+for(j=1;j<n+i;j++){        //Ñ¡È¡×îĞ¡ºÍ´ÎĞ¡Á½¸öÈ¨Öµ					
 if(HuffNode[j].parent==-1&&HuffNode[j].weight<a){						
     b=a;						
     x2=x1;						
@@ -50,13 +50,13 @@ if(HuffNode[j].parent==-1&&HuffNode[j].weight<a){
         HuffNode[n+i].rchild=x2;		
         }
     }
-    void PrintHuffTree()	{			//è¾“å‡ºå“ˆå¤«æ›¼æ ‘	
+    void PrintHuffTree()	{			//Êä³ö¹ş·òÂüÊ÷	
     int i;    
-    printf("\nå“ˆå¤«æ›¼æ ‘å„é¡¹æ•°æ®å¦‚ä¸‹è¡¨æ‰€ç¤º:\n");	
-    printf("        ç»“ç‚¹i weight parent    lchid    rchild\n");
+    printf("\n¹ş·òÂüÊ÷¸÷ÏîÊı¾İÈçÏÂ±íËùÊ¾:\n");	
+    printf("        ½áµãi weight parent    lchid    rchild\n");
     for(i=1;i<2*n;i++)		
     printf("\t%d\t%d\t%d\t%d\t%d\n",i,HuffNode[i].weight,HuffNode[i].parent,		       HuffNode[i].lchild,HuffNode[i].rchild);
-    printf("\n");}void CreateHuffCode(void){		//æ„é€ å“ˆå¤«æ›¼ç¼–ç 	
+    printf("\n");}void CreateHuffCode(void){		//¹¹Ôì¹ş·òÂü±àÂë	
     HCodeType cd;	int i,j,c,p; 	
     for(i=1;i<=n;i++){		
         cd.start=n;		
@@ -76,9 +76,9 @@ HuffCode[i].bit[j]=cd.bit[j];
 HuffCode[i].start=cd.start;		
  }	
 }
-void PrintHuffcode(void){		//è¾“å‡ºæ¯ä¸ªå¶å­ç»“ç‚¹çš„å“ˆå¤«æ›¼ç¼–ç 	
+void PrintHuffcode(void){		//Êä³öÃ¿¸öÒ¶×Ó½áµãµÄ¹ş·òÂü±àÂë	
 int i,j;	
-printf("æ¯ä¸ªå¶å­ç»“ç‚¹çš„å“ˆå¤«æ›¼ç¼–ç ä¸º:\n");	
+printf("Ã¿¸öÒ¶×Ó½áµãµÄ¹ş·òÂü±àÂëÎª:\n");	
 for(i=1;i<=n;i++)	{	
     for(j=HuffCode[i].start+1;j<=n;j++)			
     printf("%d",HuffCode[i].bit[j]);	
@@ -86,10 +86,10 @@ for(i=1;i<=n;i++)	{
     }
 }
 int main(void){	
-    printf("è¾“å…¥å¶å­èŠ‚ç‚¹ä¸ªæ•°\n"); 	
-    CreateHuffTree();			//æ„é€ å“ˆå¤«æ›¼æ ‘	
-    PrintHuffTree();				//è¾“å‡ºå“ˆå¤«æ›¼æ ‘	
-    CreateHuffCode();			//æ„é€ å“ˆå¤«æ›¼ç¼–ç 	
-    PrintHuffcode();				//è¾“å‡ºæ¯ä¸ªå¶å­ç»“ç‚¹çš„å“ˆå¤«æ›¼ç¼–ç 	
+    printf("ÊäÈëÒ¶×Ó½Úµã¸öÊı\n"); 	
+    CreateHuffTree();			//¹¹Ôì¹ş·òÂüÊ÷	
+    PrintHuffTree();				//Êä³ö¹ş·òÂüÊ÷	
+    CreateHuffCode();			//¹¹Ôì¹ş·òÂü±àÂë	
+    PrintHuffcode();				//Êä³öÃ¿¸öÒ¶×Ó½áµãµÄ¹ş·òÂü±àÂë	
     return 0;
 }
